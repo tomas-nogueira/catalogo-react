@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom/client';
 import App from './App'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Login from './Login';
+import Cadastro from './components/Cadastro';
+import {createTheme, ThemeProvider} from '@mui/material/styles'
+import Movies from './components/Movies';
+
+const theme = createTheme({
+  palette: {
+      primary: {
+        main: '#7B08D6',
+      },
+      secondary: {
+        main: '#572270',
+      },
+    },   
+})
 
 const router = createBrowserRouter([
   {
@@ -10,13 +24,23 @@ const router = createBrowserRouter([
     element:<App />
   },
   {
-    path:"login",
+    path:"/login",
     element:<Login />
+  },
+  {
+    path:"/cadastro",
+    element:<Cadastro />
+  },
+  {
+    path:"/movies",
+    element:<Movies />
   }
 ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router} />
+  <ThemeProvider theme={theme}>
+    <RouterProvider router={router} />
+  </ThemeProvider>
 );
