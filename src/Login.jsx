@@ -28,7 +28,7 @@ function Login(props) {
     /*Está requisitando uma autenticação da api */
     function Autenticar(evento){ //o evento pode ser abreviado pra e//
         evento.preventDefault();
-        fetch("http://10.139.75.32:8080/login" ,{
+        fetch(process.env.REACT_APP_BACKEND + "login" ,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

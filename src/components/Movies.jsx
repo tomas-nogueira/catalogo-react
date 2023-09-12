@@ -27,7 +27,7 @@ function Movies() {
 
     function Cadastrar(evento){
         evento.preventDefault();
-        fetch("http://10.139.75.32:8080/filmes" ,{
+        fetch( process.env.REACT_APP_BACKEND + "filmes",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ function Movies() {
         })
         .then( (resposta) => resposta.json() )
         .then( (json) => {
-            if(json.titulo){
+            if(json._id){
                 setCadastro( true );
                 setErro( false );
             }
@@ -63,6 +63,7 @@ function Movies() {
        <Container component="section" maxWidth="xs">
         <Box sx={{mt: 20, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
             <Typography component="h1" variant="h4">Cadastre um filme</Typography>
+            { erro && (<Alert severity="warning">Erro, tente novamente por favor</Alert>)}
             { cadastro && (<Alert severity="success">Você cadastrou o filme com sucesso</Alert>)}
             <Box component="form" onSubmit={Cadastrar}>
                 <TextField 
