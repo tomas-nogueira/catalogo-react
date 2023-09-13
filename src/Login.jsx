@@ -3,14 +3,13 @@ import React from 'react'
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import { useState, useEffect } from 'react'
 import { Navigate, json, useNavigate } from 'react-router-dom'
+import Style from './Login.module.css'
 
 function Login(props) {
 
-    /*Ao usar o UseState, precisa ter a const do elemento e o set que o acomapnha, pois ele que vai fazer a mudança */
     const[ email, setEmail ]= useState("");
     const[ senha, setSenha ] = useState("");
-    const[ lembrar, setLembrar ] = useState( false );// é false pq a intenção é deixar a caixa aparecendo//
-    const[ login, setLogin ]= useState( false );// é false pq o usuario entra a pagina sem estar logado//
+    const[ login, setLogin ]= useState( false );
     const[ erro, setErro] = useState(false);
     const navigate = useNavigate();
     
@@ -25,8 +24,7 @@ function Login(props) {
 
     },[ login] );
 
-    /*Está requisitando uma autenticação da api */
-    function Autenticar(evento){ //o evento pode ser abreviado pra e//
+    function Autenticar(evento){ 
         evento.preventDefault();
         fetch(process.env.REACT_APP_BACKEND + "login" ,{
             method: "POST",
@@ -55,8 +53,8 @@ function Login(props) {
 
   return (
       <Container component="section" maxWidth="xs">
-        <Box sx={{mt: 20, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
-            <Typography component="h1" variant="h4">Entrar</Typography>
+        <Box className={Style.box}>
+            <Typography className="h4" component="h1" variant="h4" >Login</Typography>
             { erro && (<Alert severity="warning">Revise seus dados e tente novamente</Alert>) /*Renderização condicional, se erro for true irá exibir o que está dentro dos parênteses */}
             <Box component="form" onSubmit={Autenticar}>
                 <TextField 
@@ -76,9 +74,8 @@ function Login(props) {
                 fullWidth
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)} /*Qualquer alteração realizada no campo senha, vai alterar o valor em tempo real */
-                />
-                <FormControlLabel control={<Checkbox value={lembrar} name="lembrar" onChange={(e) => setLembrar( !lembrar )}/>} label="Lembrar-me"/> 
-                <Button variant="contained" type="submit" fullWidth sx={{mt: 2, mb: 2}}>Enviar</Button> 
+                /> 
+                <Button variant="contained" type="submit" sx={{mt: 2, mb: 2, }}>LOGIN</Button> 
                 <Grid container>
                     <Grid item xs>
                         Esqueci a Senha

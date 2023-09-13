@@ -1,0 +1,14 @@
+.box{
+    background-color: #6093FA;
+    margin-top: 13rem;
+    height: 28rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.h4{
+    color: white;
+}
+

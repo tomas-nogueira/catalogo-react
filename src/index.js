@@ -10,13 +10,20 @@ import Editafilme from './Editafilme';
 
 const theme = createTheme({
   palette: {
-      primary: {
-        main: '#7B08D6',
-      },
-      secondary: {
-        main: '#572270',
-      },
-    },   
+    mode: 'light',
+    primary: {
+      main: '#4B56E3',
+    },
+    secondary: {
+      main: '#ffffff',
+    },
+    success: {
+      main: '#44d24c',
+    },
+    warning: {
+      main: '#dec40c',
+    },
+  },  
 })
 
 const router = createBrowserRouter([
