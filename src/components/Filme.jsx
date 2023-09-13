@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material'
+import { Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Link} from '@mui/material'
 import React from 'react'
 
 function Filme(props) {
@@ -9,7 +9,7 @@ function Filme(props) {
             <CardActionArea>
             <CardMedia 
             component="img"
-            height="140"
+            height="490"
             image={props.img}
             alt={props.titulo}
             />
@@ -31,6 +31,8 @@ function Filme(props) {
                         {props.duracao}
                     </Grid>
                 </Grid>
+                <Button variant='text' color='error' onClick={props.excluir}>Excluir</Button>
+                <Button variant='text'><Link href={"edita/" + props.id}>Editar</Link></Button>
             </CardContent>
       </CardActionArea>
     </Card>
