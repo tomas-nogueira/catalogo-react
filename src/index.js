@@ -7,6 +7,7 @@ import Cadastro from './components/Cadastro';
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import Movies from './components/Movies';
 import Editafilme from './Editafilme';
+<script src="https://kit.fontawesome.com/c80d5d499c.js" crossorigin="anonymous"></script>
 
 const theme = createTheme({
   palette: {

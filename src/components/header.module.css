@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    gap: 25rem;
+}
+.boxmid{
+    display: flex;
+    gap: 10rem;
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+}
+.boxlogin{
+    background-color: #542EC1;
+    height: 5rem;
+    border-radius: 10px;
+    width: 12rem;
+    margin-top: 0.7rem;
+}
+.boxlogin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.boxloginm{
+    display: flex;
+    flex-direction: column;
+}
+i{
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 1rem;
+}
+a{
+    color: white;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+.boxh1{
+    margin-top: 1.8rem;
+}
+span{
+    border-bottom: 5px solid #542EC1;
+}

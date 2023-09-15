@@ -1,6 +1,9 @@
 import { Avatar, Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import Filme from "./components/Filme";
+import Header from "./components/Header"
+import Style from './global.css'
+
 
 
 function App(props) {
@@ -46,15 +49,7 @@ function App(props) {
 
   return (
     <>
-      <h1>Filmes</h1>
-      <Container sx={{
-        display: "flex",
-        flexFlow: "row",
-        flexWrap: "wrap",
-        gap:"2rem"
-      }}>
-
-      
+      <Header></Header>          
       {filmes && (
         filmes.map((filme, index) => ( 
           <div>
@@ -72,7 +67,6 @@ function App(props) {
           </div>
         )) 
       )}
-      </Container>
     </>
   );
 }
