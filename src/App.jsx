@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Filme from "./components/Filme";
 import Header from "./components/Header"
 import Style from './global.css'
+import Banner from "./components/Banner";
 
 
 
@@ -49,7 +50,8 @@ function App(props) {
 
   return (
     <>
-      <Header></Header>          
+      <Header></Header>
+      <Banner></Banner>          
       {filmes && (
         filmes.map((filme, index) => ( 
           <div>

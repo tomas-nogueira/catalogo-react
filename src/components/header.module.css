@@ -6,7 +6,7 @@
 }
 .boxmid{
     display: flex;
-    gap: 10rem;
+    gap: 7rem;
     font-size: 1.5rem;
 }
 .boxlogin{
@@ -14,7 +14,6 @@
     height: 5rem;
     border-radius: 10px;
     width: 12rem;
-    margin-top: 0.6rem;
 }
 .boxlogin{
     display: flex;
@@ -36,7 +35,10 @@ a{
     cursor: pointer;
 }
 span:hover{
-    transition: 0.1s;
-    border-bottom: 5px solid #542EC1;
+    transition: 0.08s ;
+    border-bottom: 3px solid #542EC1;
     cursor: pointer;
+}
+header{
+    height: 6rem;
 }
