@@ -3,7 +3,7 @@ import Style from './header.module.css'
 
 function Header() {
   return (
-    <div className={Style.container}>
+    <header className={Style.container}>
         <div className={Style.boxh1}>
             <h1>FUNKO POP</h1>
         </div>
@@ -18,7 +18,7 @@ function Header() {
                 <a>Cadastrar</a>
             </div>
         </div>
-    </div>
+    </header>
   )
 }
 
