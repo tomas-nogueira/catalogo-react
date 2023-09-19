@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
+.headerlc{
+    height: 4rem;
+}
+
+.container{
+    background-color: #6132e1;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.titulo>h1{
+    color: white;
+}
+.perfil{
+    color: white;
+}
+.casa{
+    color: white;
+}
+.fonts{
+    display: flex;
+    gap: 0.6rem;
+}

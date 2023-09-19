@@ -2,6 +2,8 @@ import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextFi
 import { useEffect, useState } from 'react'
 import Style from './Styles/cadastro.module.css'
 import Wall from './photos/wppLOGIN.jpg'
+import Header from './Header';
+import HeaderLC from './HeaderLC';
 
 function Cadastro() {
   
@@ -55,15 +57,16 @@ function Cadastro() {
 
     return (
     <div>
-      <Container component="section" maxWidth="xs">
-        <Box sx={{mt: 20, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <Typography component="h1" variant="h4">Cadastre seu FUNKO! </Typography>
+        <HeaderLC></HeaderLC>
+        <Container component="section" maxWidth="xs">
+        <Box sx={{mt: 12, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
+                <Typography component="h1" variant="h4">Cadastre seu usuário </Typography>
                 {erro && (<Alert severity='warning' sx={{mt:2, mb: 2}}>Desculpe tente novamente</Alert>)}
                 {cadastro && (<Alert severity='success' sx={{mt:2, mb: 2}}>Seu cadastro foi um sucesso</Alert>)}
             <Box component="form" onSubmit={Cadastrar}>
                 <TextField 
                 type="text" 
-                label="Nome do Funko" 
+                label="Nome" 
                 variant="outlined" 
                 margin="normal" 
                 fullWidth

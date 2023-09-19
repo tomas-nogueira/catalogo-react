@@ -4,11 +4,16 @@
         align-items: center;
         justify-content: space-around;
         gap: 25rem;
+        height: 6rem;
     }
     .boxmid{
         display: flex;
         gap: 7rem;
         font-size: 1.5rem;
+    }
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
     }
     .boxlogin{
         background-color: #542EC1;
@@ -30,19 +35,16 @@
         font-size: 2.5rem;
         color: white;
     }
-    a{
+    .boxloginm>a{
         color: white;
         font-size: 1.3rem;
         cursor: pointer;
         text-decoration: none;
     }
-    span:hover{
+    .boxmid>a:hover{
         transition: 0.08s ;
         border-bottom: 3px solid #542EC1;
         cursor: pointer;
-    }
-    header{
-        height: 6rem;
     }
     h1{
         font-size: 2rem
@@ -80,7 +82,11 @@
         font-size: 2.5rem;
         color: white;
     }
-    a{
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
+    }
+    .boxloginm>a{
         color: white;
         font-size: 1.3rem;
         cursor: pointer;
@@ -130,7 +136,11 @@
         font-size: 2.5rem;
         color: white;
     }
-    a{
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
+    }
+    .boxloginm>a{
         color: white;
         font-size: 1.3rem;
         cursor: pointer;
@@ -180,9 +190,13 @@
         font-size: 2rem;
         color: white;
     }
-    a{
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
+    }
+    .boxloginm>a{
         color: white;
-        font-size: 1rem;
+        font-size: 1.3rem;
         cursor: pointer;
         text-decoration: none;
     }
@@ -230,7 +244,11 @@
         font-size: 2rem;
         color: white;
     }
-    a{
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
+    }
+    .boxloginm>a{
         color: white;
         font-size: 1rem;
         cursor: pointer;
@@ -280,10 +298,15 @@
         display: none;
         font-size: 0.1px;
     }
-    a{
+    .boxmid>a{
+        text-decoration: none;
+        color: black;
+    }
+    .boxloginm>a{
         color: white;
         font-size: 1rem;
         cursor: pointer;
+        text-decoration: none;
     }
     span:hover{
         transition: 0.08s ;

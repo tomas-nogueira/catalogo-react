@@ -8,8 +8,8 @@ function Header(props) {
             <h1>FUNKO POP</h1>
         </div>
         <div className={Style.boxmid}>
-            <span>Em alta</span>
-            <span>Redes Sociais</span>
+            <a>Todos os funkos</a>
+            <a href='http://localhost:3000/cadastrof'>Cadastre seu funko</a>
         </div>
         <div className={Style.boxlogin}>
             <i class="fa-solid fa-user"></i>
