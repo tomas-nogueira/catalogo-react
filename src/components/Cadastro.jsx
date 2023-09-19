@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
+import Style from './cadastro.module.css'
 
 function Cadastro() {
   
@@ -55,13 +56,13 @@ function Cadastro() {
     <div>
       <Container component="section" maxWidth="xs">
         <Box sx={{mt: 20, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <Typography component="h1" variant="h4">Junte-se hoje à Twitch </Typography>
+                <Typography component="h1" variant="h4">Cadastre seu FUNKO! </Typography>
                 {erro && (<Alert severity='warning' sx={{mt:2, mb: 2}}>Desculpe tente novamente</Alert>)}
                 {cadastro && (<Alert severity='success' sx={{mt:2, mb: 2}}>Seu cadastro foi um sucesso</Alert>)}
             <Box component="form" onSubmit={Cadastrar}>
                 <TextField 
                 type="text" 
-                label="Nome completo" 
+                label="Nome do Funko" 
                 variant="outlined" 
                 margin="normal" 
                 fullWidth
