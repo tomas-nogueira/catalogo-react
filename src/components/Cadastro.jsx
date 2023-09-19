@@ -1,6 +1,7 @@
 import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import Style from './cadastro.module.css'
+import Style from './Styles/cadastro.module.css'
+import Wall from './photos/wppLOGIN.jpg'
 
 function Cadastro() {
   

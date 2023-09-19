@@ -1,0 +1,75 @@
+@media screen and (min-width:820px) and (max-width:1920px){
+    .container{
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        height: 30rem;
+        background: rgb(91,186,255);
+        background: linear-gradient(90deg, rgba(91,186,255,1) 0%, rgba(84,46,193,1) 100%, rgba(91,186,255,1) 100%);
+        align-items: center;
+    }
+    .maintext{
+        font-size: 2.7rem;
+        color: white;
+        font-weight: bold;
+    }
+    img{
+        height: 23rem;
+    }
+    .catalogo{
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
+}
+@media screen and (min-width:572px) and (max-width:819px){
+    .container{
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        height: 30rem;
+        background: rgb(91,186,255);
+        background: linear-gradient(90deg, rgba(91,186,255,1) 0%, rgba(84,46,193,1) 100%, rgba(91,186,255,1) 100%);
+        align-items: center;
+    }
+    .maintext{
+        font-size: 2.5rem;
+        color: white;
+        font-weight: bold;
+    }
+    img{
+        height: 12rem;
+    }
+    .catalogo{
+        display: flex;
+        justify-content: center;
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+    }
+}
+@media screen and (min-width:200px) and (max-width:571px){
+    .container{
+        display: flex;
+        width: 100vw;
+        height: 30rem;
+        background: rgb(91,186,255);
+        background: linear-gradient(90deg, rgba(91,186,255,1) 0%, rgba(84,46,193,1) 100%, rgba(91,186,255,1) 100%);
+        align-items: center;
+    }
+    .maintext{
+        font-size: 2rem;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+    img{
+        display: none;
+    }
+    .catalogo{
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+    }
+}

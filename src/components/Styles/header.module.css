@@ -1,0 +1,302 @@
+@media screen and (min-width: 1920px) and (max-width: 1930px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 25rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 7rem;
+        font-size: 1.5rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 5rem;
+        border-radius: 10px;
+        width: 12rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        font-size: 2.5rem;
+        color: white;
+    }
+    a{
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 2rem
+    }
+}
+@media screen and (min-width:1440px) and (max-width: 1900px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 15rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 7rem;
+        font-size: 1.5rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 5rem;
+        border-radius: 10px;
+        width: 12rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        font-size: 2.5rem;
+        color: white;
+    }
+    a{
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 2rem
+    }
+}
+@media screen and (min-width: 1070px) and ( max-width: 1439px ){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 7rem;
+        font-size: 1.5rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 5rem;
+        border-radius: 10px;
+        width: 12rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        font-size: 2.5rem;
+        color: white;
+    }
+    a{
+        color: white;
+        font-size: 1.3rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 2rem
+    }
+}
+@media screen and (min-width:800px) and (max-width: 1069px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 2rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 1.8rem;
+        font-size: 1.2rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 4rem;
+        border-radius: 10px;
+        width: 8rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        font-size: 2rem;
+        color: white;
+    }
+    a{
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 1.6rem
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 799px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 3rem;
+        font-size: 1.2rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 4rem;
+        border-radius: 10px;
+        width: 8rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        font-size: 2rem;
+        color: white;
+    }
+    a{
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 1.6rem
+    }
+}
+@media screen and (min-width: 320px) and (max-width:499px){
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+    .boxmid{
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+    }
+    .boxlogin{
+        background-color: #542EC1;
+        height: 4rem;
+        border-radius: 10px;
+        width: 8rem;
+    }
+    .boxlogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .boxloginm{
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        display: none;
+        font-size: 0.1px;
+    }
+    a{
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    span:hover{
+        transition: 0.08s ;
+        border-bottom: 3px solid #542EC1;
+        cursor: pointer;
+    }
+    span{
+        font-size: 1rem;
+    }
+    header{
+        height: 6rem;
+    }
+    h1{
+        font-size: 1.2rem
+    }
+}
