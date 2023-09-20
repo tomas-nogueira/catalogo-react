@@ -58,12 +58,11 @@ function Login(props) {
             <HeaderLC></HeaderLC>
             <Container sx={{
                 width: "100%",
-                height: "100%",
+                height: "80%",
                 padding: 0,
                 minWidth: "100%",
-                minHeight: "100%",
-                backgroundImage: `url(${Wallpaper})`,
-                backgroundSize: "cover",
+                minHeight: "80%",
+                backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 overflow: "hidden",
             }}>
@@ -105,9 +104,9 @@ function Login(props) {
                                 <Grid item xs>
                                     Esqueci a Senha
                                 </Grid>
-                                <Grid item>
+                                <a item href='http://localhost:3000/cadastro' className={Style.cadastrara}>
                                     Cadastrar
-                                </Grid>
+                                </a>
                             </Grid>
                         </Box>
                     </Box>

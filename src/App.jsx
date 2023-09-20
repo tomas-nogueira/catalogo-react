@@ -4,6 +4,7 @@ import Filme from "./components/Filme";
 import Header from "./components/Header"
 import Style from './global.css'
 import Banner from "./components/Banner";
+import Footer from "./components/Footer";
 
 
 
@@ -51,7 +52,8 @@ function App(props) {
   return (
     <>
       <Header></Header>
-      <Banner></Banner>          
+      <Banner></Banner>
+      <Footer></Footer>        
       {filmes && (
         filmes.map((filme, index) => ( 
           <div>
