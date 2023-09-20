@@ -27,7 +27,7 @@ function Movies() {
 
     function Cadastrar(evento){
         evento.preventDefault();
-        fetch( process.env.REACT_APP_BACKEND + "filmes",{
+        fetch( process.env.REACT_APP_BACKEND + "produtos",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,8 @@ function Movies() {
                     ano: ano,
                     duracao: duracao,
                     categoria: categoria,
-                    imagem:imagem
+                    imagem:imagem,
+                    usuario: localStorage.getItem("usuario")
                 }
             )
         })

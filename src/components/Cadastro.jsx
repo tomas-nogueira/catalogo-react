@@ -4,6 +4,8 @@ import Style from './Styles/cadastro.module.css'
 import Wall from './photos/wppLOGIN.jpg'
 import Header from './Header';
 import HeaderLC from './HeaderLC';
+import { Navigate, useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 function Cadastro() {
   
@@ -13,11 +15,13 @@ function Cadastro() {
   const[senha, setSenha]=useState("");
   const[cpf, setCpf]=useState("");
   const[cadastro, setCadastro]=useState(false);
-  const[erro, setErro]=useState(false);  
+  const[erro, setErro]=useState(false);
+  const navigate=useNavigate();
+  
   
     function Cadastrar( evento ){
         evento.preventDefault();
-        fetch(process.env.REACT_APP_BACKEND + "users" ,{
+        fetch(process.env.REACT_APP_BACKEND + "usuarios",{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -35,6 +39,7 @@ function Cadastro() {
         .then( (resposta) => resposta.json() )
         .then( (json) => {
             if(json.cpf){
+                localStorage.setItem("name", JSON.stringify(json.nome))
                 setCadastro( true );
                 setErro( false );
             }
@@ -58,9 +63,16 @@ function Cadastro() {
     return (
     <div>
         <HeaderLC></HeaderLC>
-        <Container component="section" maxWidth="xs">
-        <Box sx={{mt: 12, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <Typography component="h1" variant="h4">Cadastre seu usuário </Typography>
+        <Container component="section" maxWidth="xs"  sx={{
+             height:"42rem",
+             backgroundColor:"#95C2FC",
+             borderRadius:"30px",
+             display:"flex",
+             justifyContent:"center",
+             mt:"5rem"
+        }}>
+        <Box sx={{ borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+                <h2 className={Style.cadastro}>Cadastre seu usuário. </h2>
                 {erro && (<Alert severity='warning' sx={{mt:2, mb: 2}}>Desculpe tente novamente</Alert>)}
                 {cadastro && (<Alert severity='success' sx={{mt:2, mb: 2}}>Seu cadastro foi um sucesso</Alert>)}
             <Box component="form" onSubmit={Cadastrar}>
@@ -73,6 +85,9 @@ function Cadastro() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="email" 
@@ -83,6 +98,9 @@ function Cadastro() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="tel" 
@@ -93,6 +111,9 @@ function Cadastro() {
                 value={tel}
                 onChange={(e) => setTel(e.target.value)}
                 required
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="number" 
@@ -103,6 +124,9 @@ function Cadastro() {
                 value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
                 required
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="password" 
@@ -113,16 +137,22 @@ function Cadastro() {
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
                 required
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
-                <Button variant="contained" type="submit" fullWidth sx={{mt: 2, mb: 2}}>Cadastrar</Button> 
+                <Button variant="contained" type="submit" size='large' fullWidth sx={{mt: 2, mb: 2}}>Cadastrar</Button> 
                 <Grid container>
-                    <Grid item xs>
+                    <Grid item xs sx={{
+                        color:"white",
+                        fontSize:"1.3rem"
+                    }}>
                         Suporte
                     </Grid>
-                    <Grid item>
+                    <a href='./login' className={Style.login}>
                         Login
-                    </Grid>
-                </Grid>
+                    </a>
+             </Grid>
             </Box>
         </Box>
       </Container>

@@ -8,11 +8,9 @@ function HeaderLC() {
     <header className='headerlc'>
             <div className={Style.container}>
                 <div className={Style.titulo}>
-                    <h1>FUNKO POP</h1>
+                    <h1> <a href='http://localhost:3000/'>FUNKO POP</a></h1>
                 </div>
                 <div className={Style.fonts}>
-                <a href='http://localhost:3000/login'><AccountCircleIcon className={Style.perfil}/></a>
-                <a href='http://localhost:3000/'><CottageIcon className={Style.casa}/></a>
                 </div>
             </div>
     </header>

@@ -1,47 +1,52 @@
 import { Avatar, Container } from "@mui/material";
 import { useEffect, useState } from "react";
-import Filme from "./components/Filme";
 import Header from "./components/Header"
-import Style from './global.css'
+import './global.css'
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
-
+import CardF from "./components/CardF";
+import Style from "./components/Styles/app.module.css"
 
 
 function App(props) {
 
-  const[filmes, setFilmes]=useState();
+  const user = localStorage.getItem("usuario")
+  const[produtos, setProdutos]=useState();
   const[erro, setErro]=useState();
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_BACKEND + "filmes" ,{
+
+
+
+    fetch(process.env.REACT_APP_BACKEND + "produtos/" + user,{
       method: "GET",
       headers: {
           'Content-Type': 'application/json'
       }
     })
     .then( (reposta) => reposta.json() )
-    .then( (json) => {setFilmes(json) } )
+    .then( (json) => {setProdutos(json) } )
     .catch( (erro) => { setErro( true )} )
     },[])
   
   function Excluir(evento, id ){
     evento.preventDefault();
-    fetch(process.env.REACT_APP_BACKEND + "filmes" ,{
+    fetch(process.env.REACT_APP_BACKEND + "produtos" ,{
       method: "DELETE",
       headers: {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(
           {
-            id: id
+            id: id,
+            usuario: user
           }
       )
   })
   .then( (reposta) => reposta.json() )
   .then( (json) => {
-          const novaLista = filmes.filter( (filmes) => filmes._id !== id);
-          setFilmes( novaLista );
+          const novaLista = produtos.filter( (produtos) => produtos._id !== id);
+          setProdutos( novaLista );
   } )
   .catch( (erro) => { setErro( true )} )
   }
@@ -53,24 +58,32 @@ function App(props) {
     <>
       <Header></Header>
       <Banner></Banner>
-      <Footer></Footer>        
-      {filmes && (
-        filmes.map((filme, index) => ( 
-          <div>
-            <Filme
-              img={filme.imagem}
-              titulo={filme.titulo}
-              descricao={filme.descricao}
-              duracao={filme.duracao}
-              ano={filme.ano}
-              categoria={filme.categoria}
-              excluir={(e) => Excluir(e, filme._id)}
-              id={filme._id}
+      <Container sx={{
+        display:"flex",
+        flexFlow:"row",
+        flexWrap:"wrap",
+        justifyContent:"space-around",
+        gap: "2rem",
+        mt:"5rem",
+        mb:"5rem"
+      }}>
+        {produtos && (
+          produtos.map((produto, index) => ( 
+            <CardF
+              img={produto.imagem}
+              titulo={produto.titulo}
+              descricao={produto.descricao}
+              duracao={produto.duracao}
+              ano={produto.ano}
+              categoria={produto.categoria}
+              excluir={(e) => Excluir(e, produto._id)}
+              id={produto._id}
             />
-            <br />
-          </div>
-        )) 
+        ))
       )}
+        
+      </Container>        
+      <Footer></Footer>
     </>
   );
 }

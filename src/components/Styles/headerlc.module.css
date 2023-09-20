@@ -5,27 +5,22 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400&display=swap');
 .headerlc{
-    height: 4rem;
+    height: 5.5rem;
 }
 
 .container{
-    background-color: #6132e1;
-    height: 4rem;
+    background: rgb(16,127,209);
+    background: linear-gradient(180deg, rgba(16,127,209,1) 0%, rgba(254,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    height: 5.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 2rem;
 }
-.titulo>h1{
+.titulo>h1>a{
     color: white;
-}
-.perfil{
-    color: white;
-}
-.casa{
-    color: white;
-}
-.fonts{
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: bold;
     display: flex;
-    gap: 0.6rem;
+    justify-content: center;
 }

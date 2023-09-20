@@ -6,7 +6,7 @@ import Login from './Login';
 import Cadastro from './components/Cadastro';
 import {createTheme, ThemeProvider} from '@mui/material/styles'
 import Movies from './components/Movies';
-import Editafilme from './Editafilme';
+import Editafunko from './Editafunko';
 import CadastroFunko from './components/CadastroFunko';
 <script src="https://kit.fontawesome.com/c80d5d499c.js" crossorigin="anonymous"></script>
 
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/edita/:id",
-    element:<Editafilme />
+    element:<Editafunko />
   },
   {
     path: "/cadastrof",

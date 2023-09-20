@@ -17,7 +17,6 @@ function Banner(props) {
       </div>
       <h2 className={Style.catalogo}>Catálogo</h2>
         <div>
-          <CardF></CardF>
         </div>
     </div>
   )

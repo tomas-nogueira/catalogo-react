@@ -7,6 +7,9 @@ function Footer() {
         <div className={Style.containerf}>
             Funko Pop Direitos reservados
         </div>
+        <div className='aaaaaaaaaa'>
+              
+        </div>
       </footer>
   )
 }

@@ -1,13 +1,19 @@
 import { Box, Container, TextField, Typography, Button, Autocomplete, Alert} from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import Header from './components/Header';
+import HeaderLC from './components/HeaderLC';
+import Footer from './components/Footer';
+import Style from './components/Styles/editafunko.module.css'
 
 function Editafilme() {
   
+
+
     const {id} = useParams(); // Desestruturação de objeto, dentro do parâmetro tem várias infomações, porém esse objeto só se usa o id
 
 
-    const options = ['Terror', 'Suspense', 'Drama', 'Comédia', 'Ação'];
+    const options = ['DC', 'Marvel', 'Games', 'Harry Potter', 'Outros'];
     const [titulo, setTitulo]=useState("");
     const [descricao, setDescricao]=useState("");
     const [ano, setAno]=useState("");
@@ -18,7 +24,10 @@ function Editafilme() {
     const [editar, setEditar]=useState(false)
   
     useEffect(()=>{
-        fetch(process.env.REACT_APP_BACKEND + "filmes/" + id,{
+
+        const usuario= localStorage.getItem("usuario");
+
+        fetch(process.env.REACT_APP_BACKEND + "produtos/"+ usuario + "/" + id,{
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +44,7 @@ function Editafilme() {
                 setAno(json.ano);
             }
             else{
-                setErro("Filme não encontrado")
+                setErro("Funko não encontrado")
             }
         } )
         .catch( (erro) => { setErro( true )} )
@@ -43,7 +52,7 @@ function Editafilme() {
 
     function Editar( evento ){
         evento.preventDefault();
-        fetch( process.env.REACT_APP_BACKEND + "filmes",{
+        fetch( process.env.REACT_APP_BACKEND + "produtos",{
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -56,7 +65,8 @@ function Editafilme() {
                     ano: ano,
                     duracao: duracao,
                     categoria: categoria,
-                    imagem:imagem
+                    imagem:imagem,
+                    usuario: localStorage.getItem("usuario")
                 }
             )
         })
@@ -76,10 +86,18 @@ function Editafilme() {
   
     return (
     <div>
-      <Container component="section" maxWidth="xs">
-        <Box sx={{mt: 20, borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center"}}>
-        <Typography component="h1" variant="h4">Edita Filmes</Typography>
-        {editar && (<Alert severity='success'>Filme editado com sucesso</Alert>)}
+        <HeaderLC></HeaderLC>
+      <Container component="section" maxWidth="xs" sx={{
+            height:"44rem",
+            backgroundColor:"#95C2FC",
+            borderRadius:"30px",
+            display:"flex",
+            justifyContent:"center",
+            mt:"5rem"
+      }}>
+        <Box sx={{ borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+        <h2 className={Style.edit}>Editar Funko</h2>
+        {editar && (<Alert severity='success'>Funko editado com sucesso</Alert>)}
         {erro && (<Alert severity='warning'>{erro}</Alert>)}
             <Box component="form" onSubmit={Editar}>
             <TextField 
@@ -90,6 +108,9 @@ function Editafilme() {
                 fullWidth
                 value={titulo}
                 onChange={(e) => setTitulo(e.target.value)}
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="text" 
@@ -99,6 +120,9 @@ function Editafilme() {
                 fullWidth
                 value={descricao}
                 onChange={(e) => setDescricao(e.target.value)}
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="number" 
@@ -108,6 +132,9 @@ function Editafilme() {
                 fullWidth
                 value={ano}
                 onChange={(e) => setAno(e.target.value)}
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <TextField 
                 type="number" 
@@ -117,6 +144,9 @@ function Editafilme() {
                 fullWidth
                 value={duracao}
                 onChange={(e) => setDuracao(e.target.value)}
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
                 <Autocomplete
                 disableCloseOnSelect
@@ -127,7 +157,7 @@ function Editafilme() {
                 onChange={ (event, opcao ) => {
                 setCategoria(opcao);
                 }}
-                sx={{ mt: 2, mb: 2 }}
+                sx={{ mt: 2, mb: 2, backgroundColor:"white"}}
                 fullWidth
                 />
                 <TextField 
@@ -138,8 +168,11 @@ function Editafilme() {
                 fullWidth
                 value={imagem}
                 onChange={(e) => setImagem(e.target.value)}
+                sx={{
+                    backgroundColor:"white"
+                }}
                 />
-                <Button variant="contained" type="submit" fullWidth sx={{mt: 2, mb: 2}}>Editar</Button> 
+                <Button variant="contained" type="submit" fullWidth size='large' sx={{mt: 2, mb: 2}}>Editar</Button> 
             </Box>
         </Box>
       </Container>

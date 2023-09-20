@@ -3,9 +3,10 @@ import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useState, useEffect } from 'react'
 import { Navigate, json, useNavigate } from 'react-router-dom'
-import Style from './Login.module.css'
+import Style from './components/Styles/Login.module.css'
 import HeaderLC from './components/HeaderLC'
 import Wallpaper from './components/photos/wppLOGIN.jpg'
+import Footer from './components/Footer'
 
 function Login(props) {
 
@@ -14,16 +15,22 @@ function Login(props) {
     const [login, setLogin] = useState(false);
     const [erro, setErro] = useState(false);
     const navigate = useNavigate();
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 
     /*O useEffect é o efeito colateral das mudanças realizadas, nesse caso vai limpar o setEmail e setSenha e redirecionar */
     useEffect(() => {
-        if (login) {
-            localStorage.setItem("user", JSON.stringify({ email: email }));
-            setEmail("");
-            setSenha("");
-            navigate("/")
-        }
+        async function espera() {
+            await delay(1000)
 
+            if (login) {
+                localStorage.setItem("user", JSON.stringify());
+                setEmail("");
+                setSenha("");
+                navigate("/")
+            }
+        }
+        espera();
     }, [login]);
 
     function Autenticar(evento) {
@@ -43,11 +50,13 @@ function Login(props) {
             .then((reposta) => reposta.json())
             .then((json) => {
                 if (json.user) {
+                    localStorage.setItem('usuario' , JSON.stringify(json.user._id))
                     setLogin(true)
                 }
-                else (
-                    setErro(true)
-                )
+                else {
+                    localStorage.removeItem('usuario');
+                    setErro(true);
+                }
             })
             .catch((erro) => { setErro(true) })
 
@@ -56,29 +65,16 @@ function Login(props) {
     return (
         <>
             <HeaderLC></HeaderLC>
-            <Container sx={{
-                width: "100%",
-                height: "80%",
-                padding: 0,
-                minWidth: "100%",
-                minHeight: "80%",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                overflow: "hidden",
-            }}>
-
-                <Container component="section" maxWidth="xs" sx={{height:'100vh'}}>
-                    <Box className={Style.box} sx={{
-                        alignItems: "center",
-                        backgroundColor: "rgba(252, 252, 252, .8)",
-                        padding: "50px",
-                        borderRadius: "10px",
-                        display: "flex",
-                        flexDirection: "column",
-                        mt: "13rem",
-
-                    }}>
-                        <Typography className="h4" component="h1" variant="h4" >Login</Typography>
+                <Container component="section" maxWidth="xs" sx={{
+                    height:"28rem",
+                    backgroundColor:"#95C2FC",
+                    borderRadius:"30px",
+                    display:"flex",
+                    justifyContent:"center",
+                    mt:"12rem"
+                }}>
+                    <Box className={Style.box} sx={{ borderRadius: "10px", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+                        <h2 className={Style.login}>Login</h2>
                         {erro && (<Alert severity="warning">Revise seus dados e tente novamente</Alert>) /*Renderização condicional, se erro for true irá exibir o que está dentro dos parênteses */}
                         <Box component="form" onSubmit={Autenticar}>
                             <TextField
@@ -89,6 +85,9 @@ function Login(props) {
                                 fullWidth
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
+                                sx={{
+                                    backgroundColor:"white"
+                                }}
                             />
                             <TextField
                                 type="password"
@@ -98,10 +97,16 @@ function Login(props) {
                                 fullWidth
                                 value={senha}
                                 onChange={(e) => setSenha(e.target.value)} /*Qualquer alteração realizada no campo senha, vai alterar o valor em tempo real */
+                                sx={{
+                                    backgroundColor:"white"
+                                }}
                             />
-                            <Button variant="contained" type="submit" fullWidth sx={{ mt: 2, mb: 2, }}>LOGIN</Button>
+                            <Button variant="contained" type="submit" fullWidth size='large' sx={{ mt: 2, mb: 2, }}>LOGIN</Button>
                             <Grid container>
-                                <Grid item xs>
+                                <Grid item xs sx={{
+                                    color:"white",
+                                    fontSize:"1.2rem"
+                                }}>
                                     Esqueci a Senha
                                 </Grid>
                                 <a item href='http://localhost:3000/cadastro' className={Style.cadastrara}>
@@ -111,7 +116,6 @@ function Login(props) {
                         </Box>
                     </Box>
                 </Container>
-            </Container>
         </>
     )
 }
